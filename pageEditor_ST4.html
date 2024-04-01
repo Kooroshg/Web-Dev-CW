@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<title>Page Editor</title>
+<style>
+body {
+    font-family: 'Franklin Gothic Medium';
+    margin: 0;
+    padding: 0;
+    background-color: #bcb8b8;
+}
+/*Style for the page, including background and text color*/
+h1 {
+    text-align: center;
+    font-size: x-large;
+    margin-top: 20px;
+    color: #000000;
+    background-color: rgb(240, 10, 10);
+}
+/*Paragraph styling*/
+p { 
+    background-color: rgb(240, 10, 10); 
+}
+/*Footer styling with a fixed position at the bottom, including border styling*/
+.footer {
+    background-color: #918d8d;
+    padding: 2px 10px;
+    border-color: black;
+    border-width: 5px;
+    border-style: solid;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center; /*Ensures footer content is centered*/
+}
+/*Specific style for paragraphs within the footer for contrast and readability*/
+.footer p {
+    color: black;
+    background-color: #918d8d;
+    font-family: Helvetica;
+    font-size: 15px;
+}
+/*Centering the bottom link for better navigation*/
+.bottom-link {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+/*Styling for the "Go to top" button for visibility and easy access*/
+.top-link {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ff0c0c;
+    padding: 10px 20px;
+    font-size: large;
+}
+/*Ensures link within the "Go to top" button is styled for visibility*/
+.top-link a {
+    text-decoration: none;
+    color: #ffffff;
+}
+div {
+    font-family: 'Franklin Gothic Medium';
+    margin: 0 auto; /* Center the div */
+    text-align: center;
+    font-size: large;
+    padding: 0;
+    background-color: #ff0c0c; 
+}
+</style>
+</head>
+<body>
+<h1>Page Editor</h1>
+<hr style="border-color: red;">
+<!-- My personal information section with styled headings -->
+<h2 style="text-align: center;"><i>Name: Koorosh Gholipour-Shoubi</i></h2>
+<h2 style="text-align: center;"><i>Role: Student 4</i></h2>
+<h2 style="text-align: center;"><i>The Following Pages were edited by me:</i></h2>
+<hr style="border-color: red;">
+
+<!-- Content section with links and descriptions of my sites -->  
+<div class="bottom-link">
+<a href="#bottom">Jump to Bottom</a>
+<a id="bottom"></a>
+<p>
+<u><b>Gallery:</b></u><br><br>
+    Created a gallery using HTML, JS, and CSS.<br>
+    Added some customization which included access for users to change the background when the image is enlarged and change the font of the description.<br>
+    Used JavaScript for image enlargement when clicked as well as for the back-to-top button which would be displayed at the bottom right.<br>
+    The CSS added various styling attributes such as an effect when hovering on the image which would make it brighter.<br><br>
+    <a href="gallery.html"><u>link to gallery</u></a>
+</p><br>
+<p>
+<u><b>Sitemap:</b></u><br><br>
+    Made a sitemap with SVG elements which allowed me to create rectangular boxes that would hold each part of the site.<br>
+    Also made it so that the boxes can change color when they change and they can scale when the window changes size. This was implemented in CSS styling.<br>
+    The SVG Viewbox allowed me to set the coordinates for the boxes as well as for enabling a responsive design by adjusting the viewBox coordinates dynamically based on the available space.<br><br>
+    <a href="sitemap.html"><u>link to sitemap</u></a>
+</p><br>
+<p>
+<u><b>Content Page:</b></u><br><br>
+    Also created a content page which has the links of the sites I used on my images page.<br>
+    Lots of different articles discussing Low Income Education and how it can be solved through care in striving for better teaching facilities.<br><br>
+    <a href="content_ST4.html"><u>link to Content Page</u></a>
+</p><br>
+</div>
+ <!-- Footer fixed to bottom -->
+<div class="footer">
+    <footer>
+    <p>&copy; 2024 Quality Education, Inc. All Rights Reserved</p>
+    </footer>
+</div>
+<!-- Back to top link, fixed to the bottom right for easy navigation -->
+<a id="top"></a>
+<div class="top-link">
+<a href="#top">Go to top</a>
+</div>
+</body>
+</html>

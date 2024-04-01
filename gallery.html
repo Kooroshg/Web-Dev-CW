@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Gallery</title>
+<style>
+/*CSS Styles*/
+
+body {
+  font-family: 'Franklin Gothic Medium';/*Consistent font for the whole page*/
+  margin: 0;
+  padding: 0;
+  background-color: #bcb8b8;/*Light grey background*/
+}
+
+/*styling for the header*/
+h1 {
+  text-align: center;
+  margin-top: 20px;
+  color: #333;
+}
+/*Navigation styling*/
+.navbar {
+  background-color: red;/*Red background*/
+  padding: 10px 0;/*Increased padding*/
+  text-align: left;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;/*Remove underline from the links*/
+  padding: 10px 20px;
+}
+
+.navbar a:hover {
+  background-color: darkred;/*Dark red background when hovering*/
+}
+
+/*Logo Styles*/
+.logoleft2 {
+  width: 300px; /*width for consistency across devices*/
+  height: 180px; /*Height to maintain aspect ratio*/
+  margin: auto; /*Center logo*/
+  display: block; /*Make sure the image is displayed as a block element*/
+  border: 50px solid transparent; /*Transparent border*/
+}
+
+/*Gallery Styles*/
+.gallery {
+  display: grid;/*Utilize CSS grid for layout*/
+  grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));/*Responsive columns*/
+  gap: 20px;
+  padding: 20px;
+}
+/*Style for each image in the gallery*/
+.gallery img {
+  width: 100%;/*Full width*/
+  height: auto;/*Maintain aspect ratio*/
+  border-radius: 5px;/*Rounded corners for aesthetics*/
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);/*Shadow for depth*/
+  transition: transform 0.3s ease-in-out;/*Transition for hover effect*/
+  cursor: pointer;/*Indicates clickable image*/
+}
+/*Hover effect for gallery images*/
+.gallery img:hover {
+  transform: scale(1.1); /*Scale up the image by 10%*/
+  filter: brightness(110%); /*Increase brightness by 10%*/
+}
+.largeview {
+  cursor: pointer;
+}
+
+.largeview img {
+  width: 100%;/* Adjust width*/
+  height: auto;
+  border-radius: 5px;
+}
+.gallery-extended {
+  display: none;/*Initially hidden*/
+  position: fixed;/*Overlay on top of content*/
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);/*Semi-transparent background*/
+}
+
+.extended-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);/* Center the content*/
+  text-align: center;
+}
+
+.extended-image {
+  max-width: 90%; /*Limit width to prevent overflow*/
+  max-height: 90%; /*Limit height to ensure visibility*/
+}
+
+.extended-description {
+  color: white;
+  margin-top: 20px;
+}
+
+/*Footer Styles*/
+.footer{
+  background-color:#918d8d;/*Background for footer*/
+  padding:2px 10px;
+  border-color: black;/*Border for definition*/
+  border-width: 5px;
+  border-style: solid;
+  }
+
+.footer {
+    flex-shrink: 0; /*Footer wont get smaller*/
+  }
+
+.footer p{
+    color: black;
+    font-family: Helvetica;
+    font-size:15px;
+}
+/*Back to Top Button Styles*/
+#backToTopBtn {
+  display: none; /* Initially hide the button*/
+  position: fixed; /*Stays in place when scrolling*/
+  bottom: 20px;
+  right: 20px;
+  background-color: #c44a4a;
+  color: rgb(194, 193, 193);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 10px 20px;
+  font-family: 'Franklin Gothic Medium';
+  font-size: 14px;
+  z-index: 999; /*Ensures the button stays on top*/
+}
+</style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+      <ul>
+        <li><a href="https://w1990543.users.ecs.westminster.ac.uk/EduQt/splash.html">Home</a></li>
+        <li><a href="content_ST4.html">Content page</a></li>
+        <li><a href="sitemap.html">Sitemap</a></li>
+        <li><a href="pageEditor_ST4.html">Page Editor</a></li>
+        <li><a href="https://w1990543.users.ecs.westminster.ac.uk/EduQt/shop.html">Shop</a></li>
+      </ul>
+    </div>
+<!-- Logo -->
+<div class="header">
+  <header>
+      <a href="https://w1990543.users.ecs.westminster.ac.uk/EduQt/splash.html"><img class="logoleft2" src="https://media.discordapp.net/attachments/1215706197596967063/1223038332691415060/Picture2.png?ex=66186635&amp;is=6605f135&amp;hm=a169515be65a6670f8f31a703853c119310cf27b5d1760525d1d9d194d9306a4&amp;format=webp&amp;quality=lossless&amp;width=1910&amp;height=1024" alt="Logo">
+      </a>
+  </header>
+</div>
+ <!-- Title of gallery -->
+<h1><b><i>Image Gallery</i></b></h1>
+<!-- Image Gallery -->
+<div class="gallery">
+<!-- Images -->
+<div class="largeview">
+  <img src="https://assets.globalpartnership.org/s3fs-public/styles/standard_blog_banner/public/blog_post/image/22137016243_b360ee5287_k.jpg?VersionId=0y1BdGkuj_dW.hZ.JqoZ9UvrOmA7chtY&itok=n-ejxZxt" alt="Image 1" class="gallery-img" title="Children in a classroom" onclick="enlargeImage(this)">
+  <div class="description">Better training and supporting teachers are expected to have a catalytic effect on DRC’s education system, improving learning for Congolese children and better preparing them to contribute to society.</div>
+    </div>
+<div class="largeview">
+  <img src="https://www.bristol.ac.uk/media-library/sites/policybristol/briefings-and-reports-pdfs/2020-briefings-and-reports-pdfs/Two%20Girls%20Doing%20School%20Work.jpg" alt="Image 2" title="Two young girls drawing in class" onclick="enlargeImage(this)">
+  <div class="description">Research shows that the educational attainments of Children in Need (CIN) and Children in Care (CIC) in England are significantly lower than for other pupils. This represents sizeable numbers of children: the latest figures (March 2019) showed that there were 399,500 Children in Need in England and 78,150 Children in Care</div>
+    </div>
+<div class="largeview">
+  <img src="https://www.care.org/wp-content/uploads/2020/06/RS32016_2017_TL_TB_0211-scr-1.jpg" alt="Image 3" title="Group photo of primary school girls that have been supported by CARE" onclick="enlargeImage(this)">
+  <div class="description">CARE works to increase access to quality education for marginalized children, particularly adolescent girls living in fragile and conflict-affected settings.
+  </div>
+   </div>
+<div class="largeview">
+  <img src="https://edify.org/wp-content/uploads/2020/01/January_2020_BlogFeatureImage-1-scaled.jpg" alt="Image 4" title="School kids learning from a tablet" onclick="enlargeImage(this)">
+  <div class="description">With globalization, students around the world must be highly skilled and graduate with a quality education or risk unemployment.Technology skills have become a necessity for employment in the global North. In the South, with strained markets and high unemployment, technology has emerged, but its use in education is lacking. </div>
+   </div>
+<div class="largeview">
+  <img src="https://www.thebritishacademy.ac.uk/media/images/iStock-483161230.width-592.jpg" alt="Image 5" title="Teacher showing a book to his class" onclick="enlargeImage(this)">
+  <div class="description">For teachers to more successfully engage boys with reading more extensively (and for pleasure) in low-income contexts, they need to be supported to reconceptualise reading beyond proficiency to also include children’s individual interests and volition as readers. In addition, they could be enabled to reflect on their unconscious perceptions of different boys’ social identities (i.e. different sub-groups of boys) and how these impact on their perceptions of them as readers.</div>
+   </div>
+<div class="largeview">
+  <img src="https://media.npr.org/assets/img/2021/06/24/gettyimages-905936092_custom-f7a7730fd4c172fb58b8e9bb15cf7acac73526f3-s800-c85.webp" alt="Image 6" title="African school kids engaging in classroom activities" onclick="enlargeImage(this)">
+  <div class="description">Their biggest finding is that gender-neutral programs such as handing out cash aid to families of school-aged children can be just as effective at improving girls'education as programs designed just for girls.
+  </div>
+    </div>
+<div class="largeview">
+  <img src="https://s7d1.scene7.com/is/image/wbcollab/20161201-madagascar-hoel-5654_1:1140x500?qlt=90&fmt=webp&resMode=sharp2" alt="Image 7" title="Children eager to answer a question in class" onclick="enlargeImage(this)">
+  <div class="description">Education is not only a fundamental human right but also a key investment in human capital that translates into economic growth and other development outcomes. Keeping children in lower-income countries in school longer is one of the best global investments that can be made. Returns to education, particularly at higher education levels, are highest in low-income countries.</div>
+    </div>
+<div class="largeview">
+  <img src="https://www.unicef.org/sites/default/files/styles/press_release_feature/public/UN0579000.JPG.webp?itok=nimQKRJL" alt="Image 8" title="School Children reading in class during COVID" onclick="enlargeImage(this)">
+  <div class="description">“We are failing children. Too many education systems around the world are investing the least in those children who need it the most,” said UNICEF Executive Director Catherine Russell. “Investing in the education of the poorest children is the most cost-effective way to ensure the future for children, communities and countries. True progress can only come when we invest in every child, everywhere.”</div>
+    </div>
+<div class="largeview">
+  <img src="https://image.jimcdn.com/app/cms/image/transf/dimension=940x10000:format=jpg/path/s3e317712a5293e7c/image/idd67185ceef14520/version/1686066530/image.jpg" alt="Image 9" title="School boy writing in his workbook" onclick="enlargeImage(this)">
+  <div class="description">Despite the numerous benefits of education, many low-income countries struggle to provide adequate educational opportunities. According to data from the UNESCO Institute for Statistics (UIS), an estimated 258 million children and youth worldwide were out of school in 2018. The majority of these out-of-school children live in low- and lower-middle-income countries, with Sub-Saharan Africa being the region with the highest out-of-school rates. The education system in low-income countries faces various challenges, for instance lack of resources and infrastructure, low enrollment rates, and insufficient teacher training and salaries.</div>
+    </div>
+<div class="largeview">
+  <img src="https://assets.globalpartnership.org/s3fs-public/styles/standard_blog_banner/public/25298226672_dc6bbb60df_k.jpg?VersionId=CuWpvF8ofe1wJu5v1NfnKFCg27j_JN65&itok=PENkHshG" alt="Image 10" title="School teacher writing on a blackboard" onclick="enlargeImage(this)">
+  <div class="description">The world needs better teachers; teachers who are well-prepared, qualified, caring, and motivated. This is true for all children, but particularly true for disadvantaged students from low-income contexts. Such children are often taught by poorly trained and poorly qualified teachers, or teachers who have very low levels of motivation. This combination of poor preparation and low motivation is lethal in terms of children learning.</div>
+    </div>
+</div>
+<!-- Extended View -->
+<div class="gallery-extended" onclick="closeExtendedView()">
+  <div class="extended-content">
+    <img src="images/education2.jpg" alt="" class="extended-image">
+    <div class="extended-description">The project examined the educational attainments and progress of children who experienced being In Need or In Care at some stage of their schooling in England; it analysed the factors associated with attainments at Key Stage 4 (16 years); it investigated how we can account for children who succeed in their GCSE exams at 16 despite experiencing severe early adversity requiring social work intervention; and it explored parents’, children’s and professionals’ views on the factors affecting educational progress for Children in Need and Children in Care.</div>
+  </div>
+</div>
+<div class="gallery-extended" onclick="closeExtendedView()">
+  <div class="extended-content">
+    <img src="images/education3.jpg" alt="" class="extended-image">
+    <div class="extended-description">CARE works to increase access to quality education for marginalized children, particularly adolescent girls living in fragile and conflict-affected settings.</div>
+  </div>
+</div>
+<label for="colorScheme">Color Scheme:</label>
+<select id="colorScheme">
+  <option value="light">Light</option>
+  <option value="dark">Dark</option>
+</select>
+
+<label for="fontFamily">Font:</label>
+<select id="fontFamily">
+  <option value="Arial, sans-serif">Arial</option>
+  <option value="Georgia, serif">Georgia</option>
+</select>
+<!-- Back to Top Button -->
+<button id="backToTopBtn" onclick="backToTop()" title="Back to Top">Back to Top</button>
+<!-- Footer -->
+<div class="footer" style="text-align: center;">
+  <footer>
+      <p><b>&copy; 2024 Quality Education, Inc. All Rights Reserved</b></p>
+  </footer>
+</div>
+
+<script>
+/*JavaScript for Gallery*/
+
+/*Function to handle image enlargement*/
+function enlargeImage(image) {
+  const imageUrl = image.getAttribute('src'); /*Get the source URL of the clicked image*/
+
+  /*Set the source URL for the enlarged image */
+  const enlargedImage = document.querySelector('.extended-image');
+  enlargedImage.setAttribute('src', imageUrl);
+
+  /*Get the description when image is clicked */
+  const description = image.nextElementSibling.textContent;
+
+  /*Description in the extended view */
+  const extendedDescription = document.querySelector('.extended-description');
+  extendedDescription.textContent = description;
+
+  /*Display the extended view */
+  const extendedView = document.querySelector('.gallery-extended');
+  extendedView.style.display = 'block';
+}
+/*Function to close the extended view*/
+function closeExtendedView() {
+  /*Hide the extended view*/
+  const extendedView = document.querySelector('.gallery-extended');
+  extendedView.style.display = 'none';
+}
+window.onscroll = function() { scrollFunction() };
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.getElementById("backToTopBtn").style.display = "block";
+  } else {
+    document.getElementById("backToTopBtn").style.display = "none";
+  }
+}
+
+function backToTop() {
+  document.documentElement.scrollTop = 0;
+}
+document.getElementById("colorScheme").addEventListener("change", function() {
+  const colorScheme = this.value;
+  applyColorScheme(colorScheme);
+});
+
+document.getElementById("fontFamily").addEventListener("change", function() {
+  const fontFamily = this.value;
+  applyFontFamily(fontFamily);
+});
+
+function applyColorScheme(colorScheme) {
+  const extendedView = document.querySelector('.gallery-extended');
+  if (colorScheme === 'dark') {
+    extendedView.style.backgroundColor = '#333';// Dark background 
+  } else {
+    extendedView.style.backgroundColor = '#f8f9fa';// Light background
+  }
+}
+
+function applyFontFamily(fontFamily) {
+  const extendedContent = document.querySelector('.extended-content');
+  extendedContent.style.fontFamily = fontFamily;
+}
+</script>
+</body>
+</html>

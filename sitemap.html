@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SVG Sitemap</title>
+<style>
+/*Sets the default font and background for the entire page*/
+body { 
+  margin: 0;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  background-color: #bcb8b8;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 20px;
+  color: #333;
+}
+
+.navbar {
+  background-color: red;
+  padding: 10px 0;
+  text-align: left;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+}
+/*Changes the background color of nav links on hover for visual indication*/
+.navbar a:hover {
+  background-color: darkred;
+}
+/*Styles for a centrally aligned logo image within the header*/
+.logoleft2 {
+  width: 300px;
+  height: 180px;
+  margin: auto;
+  display: block;
+  border: 50px solid transparent;
+}
+
+.footer {
+  background-color: #918d8d;
+  padding: 2px 10px;
+  border-color: black;
+  border-width: 5px;
+  border-style: solid;
+  flex-shrink: 0;
+  text-align: center; /*Center align text in footer*/
+}
+
+.footer p {
+  color: black;
+  font-family: Helvetica;
+  font-size: 15px;
+}
+
+#backToTopBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #c44a4a;
+  color: rgb(194, 193, 193);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 10px 20px;
+  font-family: 'Franklin Gothic Medium';
+  font-size: 14px;
+  z-index: 999;
+}
+
+svg { 
+  display: block; 
+  width: 100%; 
+  height: 100%; 
+}
+/*Styles for SVG sections on hover to improve interactivity*/
+.section, .sub-section { 
+  fill: #f06060; 
+  stroke: #333; 
+  stroke-width: 2; 
+  cursor: pointer; 
+}
+
+.section:hover, .sub-section:hover { 
+  fill: #b4b0b0; 
+}
+
+.link { 
+  fill: none; 
+  stroke: #333; 
+  stroke-width: 2; 
+}
+
+.text { 
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+  font-size: 14px; 
+  fill: #ffffff; 
+  pointer-events: none; 
+}
+</style>
+</head>
+<body>
+<!-- Navigation bar -->
+<div class="navbar">
+  <ul>
+    <li><a href="https://w1990543.users.ecs.westminster.ac.uk/EduQt/splash.html" tabindex="1">Home</a></li>
+    <li><a href="content_ST4.html" tabindex="2">Content page</a></li>
+    <li><a href="https://w1979142.users.ecs.westminster.ac.uk/WebDev/EduQt/feedback.html" tabindex="3">Feedback</a></li>
+    <li><a href="gallery.html" tabindex="4">Gallery</a></li>
+    <li><a href="pageEditor_ST4.html" tabindex="5">Page Editor</a></li>
+    <li><a href="https://w1990543.users.ecs.westminster.ac.uk/EduQt/shop.html" tabindex="6">Shop</a></li> 
+  </ul>
+</div>
+
+<div class="header">
+  <a href="https://w1990543.users.ecs.westminster.ac.uk/EduQt/splash.html">
+  <img class="logoleft2" src="https://media.discordapp.net/attachments/1215706197596967063/1223038332691415060/Picture2.png?ex=66186635&amp;is=6605f135&amp;hm=a169515be65a6670f8f31a703853c119310cf27b5d1760525d1d9d194d9306a4&amp;format=webp&amp;quality=lossless&amp;width=1910&amp;height=1024" alt="Logo">
+  </a>
+</div>
+
+<h1><b><i>Sitemap</i></b></h1>
+
+<svg viewBox="0 0 800 600" role="img" aria-label="Website Sitemap" tabindex="0">
+  <!-- SVG for visual sitemap, accessible to screen readers with role="img" and aria-label -->
+  <a href="https://w1990543.users.ecs.westminster.ac.uk/EduQt/splash.html" tabindex="7" aria-label="Home">
+  <title>Home</title>
+  <rect x="50" y="50" width="200" height="100" class="section" tabindex="0" aria-label="Home"></rect>
+  <text x="125" y="115" text-anchor="middle" class="text">Home</text>
+</a>
+<a href="content_ST4.html" tabindex="8" aria-label="Content">
+  <title>Content page</title>
+  <rect x="50" y="200" width="200" height="100" class="section" tabindex="0" aria-label="Content"></rect>
+  <text x="125" y="265" text-anchor="middle" class="text">Content Page</text>
+</a>
+<a href="https://w1979142.users.ecs.westminster.ac.uk/WebDev/EduQt/feedback.html" tabindex="9" aria-label="Feedback">
+  <title>Feedback</title>
+  <rect x="300" y="50" width="200" height="50" class="sub-section" tabindex="0" aria-label="Feedback"></rect>
+  <text x="400" y="85" text-anchor="middle" class="text">Feedback</text>
+  <line x1="150" y1="100" x2="300" y2="75" class="link"/>
+</a>
+<a href="gallery.html" tabindex="10" aria-label="Gallery">
+  <title>Gallery</title>
+  <rect x="300" y="150" width="200" height="50" class="sub-section" tabindex="0" aria-label="Gallery"></rect>
+  <text x="400" y="185" text-anchor="middle" class="text">Gallery</text>
+  <line x1="150" y1="100" x2="300" y2="175" class="link"/>
+</a>
+<a href="pageEditor_ST4.html" tabindex="11" aria-label="Page Editor">
+  <title>Page Editor</title>
+  <rect x="300" y="250" width="200" height="50" class="sub-section" tabindex="0" aria-label="Page Editor"></rect>
+  <text x="400" y="285" text-anchor="middle" class="text">Page Editor</text>
+  <line x1="150" y1="100" x2="300" y2="275" class="link"/>
+</a>
+<a href="https://w1990543.users.ecs.westminster.ac.uk/EduQt/shop.html" tabindex="12" aria-label="Shop">
+  <title>Shop</title>
+  <rect x="300" y="350" width="200" height="50" class="sub-section" tabindex="0" aria-label="Shop"></rect>
+  <text x="400" y="385" text-anchor="middle" class="text">Shop</text>
+  <line x1="150" y1="100" x2="300" y2="375" class="link"/>
+</a>
+</svg>
+
+<div class="footer">
+<footer>
+<p><b>&copy; 2024 Quality Education, Inc. All Rights Reserved</b></p>
+</footer>
+</div>
+<!-- Button to scroll back to the top of the page; initially hidden -->
+<button id="backToTopBtn" onclick="backToTop()" title="Back to Top">Back to Top</button>
+
+<script>
+  /*JavaScript for page behaviors, like the back-to-top button*/
+  window.onscroll = function() { scrollFunction() };
+  /*Detects when the user scrolls on the page*/
+  /*Shows or hides the "Back to Top" button based on scroll position*/
+  function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.getElementById("backToTopBtn").style.display = "block";
+  } else {
+    document.getElementById("backToTopBtn").style.display = "none";
+  }
+}
+/*Scrolls the page back to the top when the button is clicked*/
+function backToTop() {
+  document.documentElement.scrollTop = 0;
+  }
+</script>
+</body>
+</html>
